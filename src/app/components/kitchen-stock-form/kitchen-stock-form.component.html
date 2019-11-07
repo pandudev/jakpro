@@ -1,0 +1,43 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">Kitchen Stock Form</div>
+    <div class="card-body">
+      <form action="" class="form-horizontal">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="hf-email"
+            >Raw of Material</label
+          >
+          <div class="col-md-9">
+            <select class="form-control" id="select1" name="select1">
+              <option value="0">Please select RAW</option>
+              <option value="1">Bawang Putih</option>
+              <option value="2">Bawang Merah</option>
+              <option value="3">Garam Dapur</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="hf-email"
+            >Request Stock Quantity</label
+          >
+          <div class="col-md-9">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Input request stock quantity"
+            />
+            <!-- <span class="help-block">Please enter your email</span> -->
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary ml-2 float-right" type="submit">
+            <i class="fa fa-send mr-2"></i> Request
+          </button>
+          <a routerLink="/kitchen-stock" class="btn btn-danger float-right">
+            <i class="fa fa-ban mr-2"></i>Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

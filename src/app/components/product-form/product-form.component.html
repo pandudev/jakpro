@@ -1,0 +1,108 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">Product Form</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <form action="" class="form-horizontal">
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label" for="hf-email">Name</label>
+              <div class="col-md-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Input Product Name"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label" for="hf-email"
+                >Price</label
+              >
+              <div class="col-md-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Input Product Price"
+                />
+                <!-- <span class="help-block">Please enter your email</span> -->
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label" for="hf-email"
+                >Image</label
+              >
+              <div class="col-md-8">
+                <input type="file" placeholder="Input Product Price" />
+                <!-- <span class="help-block">Please enter your email</span> -->
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary ml-2 float-right" type="submit">
+                <i class="fa fa-send mr-2"></i> Submit
+              </button>
+              <a
+                routerLink="/product-raw-form"
+                class="btn btn-primary ml-2 text-white float-right"
+              >
+                <i class="fa fa-plus mr-2"></i> Add RAW
+              </a>
+              <a routerLink="/product" class="btn btn-danger float-right">
+                <i class="fa fa-ban mr-2"></i>Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <table class="table table-responsive-sm table-hover">
+            <thead>
+              <tr>
+                <th>RAW</th>
+                <th>Quantity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bawang Putih</td>
+                <td>2 gram</td>
+                <td>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="fa fa-trash"></i
+                  ></a>
+                  <a routerLink="/product-raw-form" class="btn btn-primary mr-2"
+                    ><i class="fa fa-pencil"></i
+                  ></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Cabe Merah</td>
+                <td>4 gram</td>
+                <td>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="fa fa-trash"></i
+                  ></a>
+                  <a routerLink="/product-raw-form" class="btn btn-primary mr-2"
+                    ><i class="fa fa-pencil"></i
+                  ></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bawang Merah</td>
+                <td>2 gram</td>
+                <td>
+                  <a href="#" class="btn btn-danger"
+                    ><i class="fa fa-trash"></i
+                  ></a>
+                  <a routerLink="/product-raw-form" class="btn btn-primary mr-2"
+                    ><i class="fa fa-pencil"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
