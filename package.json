@@ -1,25 +1,8 @@
 {
-  "name": "@coreui/coreui-free-angular-admin-template",
+  "name": "jakpro",
   "version": "2.7.0",
-  "description": "CoreUI Free Angular 2+ Admin Template",
-  "author": {
-    "name": "Łukasz Holeczek",
-    "url": "http://holeczek.pl",
-    "github": "https://github.com/mrholek",
-    "twitter": "https://twitter.com/lukaszholeczek"
-  },
-  "contributors": [
-    {
-      "name": "Andrzej Kopański",
-      "url": "https://github.com/xidedix"
-    }
-  ],
-  "homepage": "https://coreui.io/angular",
-  "copyright": "Copyright 2019 creativeLabs Łukasz Holeczek",
-  "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
