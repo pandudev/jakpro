@@ -5,13 +5,13 @@
     src: 'assets/img/brand/jakpro.png',
     width: auto,
     height: 25,
-    alt: 'CoreUI Logo'
+    alt: 'JakPro Logo'
   }"
   [navbarBrandMinimized]="{
     src: 'assets/img/brand/jakpro.png',
     width: auto,
     height: 30,
-    alt: 'CoreUI Logo'
+    alt: 'JakPro Logo'
   }"
   [sidebarToggler]="'lg'"
   [asideMenuToggler]="'lg'"
@@ -78,16 +78,16 @@
   <main class="main">
     <!-- Breadcrumb -->
     <!-- breaking change 'cui-breadcrumb' -->
-    <cui-breadcrumb>
-      <!-- Breadcrumb Menu-->
-      <!-- <li class="breadcrumb-menu d-md-down-none">
+    <!-- <cui-breadcrumb> -->
+    <!-- Breadcrumb Menu-->
+    <!-- <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
           <a class="btn" href="#"><i class="icon-speech"></i></a>
           <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
           <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
         </div>
       </li> -->
-    </cui-breadcrumb>
+    <!-- </cui-breadcrumb> -->
     <!-- deprecation warning for 'app-breadcrumb' -->
     <!--<ol class="breadcrumb">-->
     <!--<app-breadcrumb></app-breadcrumb>-->
@@ -105,7 +105,7 @@
     </div>
     <!-- /.container-fluid -->
   </main>
-  <app-aside [fixed]="true" [display]="false" [ngClass]="'test'">
+  <!-- <app-aside [fixed]="true" [display]="false" [ngClass]="'test'">
     <tabset>
       <tab>
         <ng-template tabHeading><i class="icon-list"></i></ng-template>
@@ -552,11 +552,11 @@
         </div>
       </tab>
     </tabset>
-  </app-aside>
+  </app-aside> -->
 </div>
 <app-footer>
-  <span><a routerLink="/">RestoPOS</a> &copy; 2019 JakPro.</span>
-  <span class="ml-auto"
+  <span class="m-auto"><a routerLink="/">RestoPOS</a> &copy; 2019 JakPro.</span>
+  <!-- <span class="ml-auto"
     >Powered by <a href="https://coreui.io/angular">CoreUI for Angular</a></span
-  >
+  > -->
 </app-footer>

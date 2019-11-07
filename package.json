@@ -20,11 +20,12 @@
   "scripts": {
     "ng": "ng",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod --aot --buildOptimizer --commonChunk --vendorChunk --optimization --progress",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.9.2",
     "core-js": "^2.6.10",
+    "express": "^4.17.1",
     "flag-icon-css": "^3.4.5",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
@@ -50,6 +52,7 @@
     "ng2-charts": "^2.3.0",
     "ngx-bootstrap": "^5.2.0",
     "ngx-perfect-scrollbar": "^8.0.0",
+    "path": "^0.12.7",
     "rxjs": "^6.5.3",
     "simple-line-icons": "^2.4.1",
     "ts-helpers": "^1.1.2",
@@ -79,7 +82,7 @@
     "typescript": "~3.6.4"
   },
   "engines": {
-    "node": ">= 12",
-    "npm": ">= 6"
+    "node": "10.16.3",
+    "npm": "6.9.0"
   }
 }

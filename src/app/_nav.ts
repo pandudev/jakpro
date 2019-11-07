@@ -44,6 +44,11 @@ export const navItems: INavData[] = [
     icon: 'icon-drawer'
   },
   {
+    name: 'Stock Request',
+    url: '/stock-request',
+    icon: 'icon-drawer'
+  },
+  {
     title: true,
     name: 'Cashier'
   },
@@ -75,6 +80,20 @@ export const navItems: INavData[] = [
   {
     name: 'User',
     url: '/user',
+    icon: 'icon-people'
+  },
+  {
+    title: true,
+    name: 'Report'
+  },
+  {
+    name: 'Sale Report',
+    url: '/report-sale',
+    icon: 'icon-people'
+  },
+  {
+    name: 'Purchasing Report',
+    url: '/report-purchasing',
     icon: 'icon-people'
   }
 ];

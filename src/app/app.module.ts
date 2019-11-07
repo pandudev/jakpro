@@ -56,6 +56,10 @@ import { TableFormComponent } from './components/table-form/table-form.component
 import { TableComponent } from './components/table/table.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserComponent } from './components/user/user.component';
+import { InventoryTransactionFormComponent } from './components/inventory-transaction-form/inventory-transaction-form.component';
+import { StockRequestComponent } from './components/stock-request/stock-request.component';
+import { ReportPurchasingComponent } from './components/report-purchasing/report-purchasing.component';
+import { ReportSaleComponent } from './components/report-sale/report-sale.component';
 
 @NgModule({
   imports: [
@@ -96,7 +100,11 @@ import { UserComponent } from './components/user/user.component';
     TableFormComponent,
     TableComponent,
     UserFormComponent,
-    UserComponent
+    UserComponent,
+    InventoryTransactionFormComponent,
+    StockRequestComponent,
+    ReportPurchasingComponent,
+    ReportSaleComponent
   ],
   providers: [
     {

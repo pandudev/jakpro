@@ -1,3 +1,6 @@
+import { ReportSaleComponent } from './components/report-sale/report-sale.component';
+import { StockRequestComponent } from './components/stock-request/stock-request.component';
+import { InventoryTransactionFormComponent } from './components/inventory-transaction-form/inventory-transaction-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { TableFormComponent } from './components/table-form/table-form.component';
 import { TableComponent } from './components/table/table.component';
@@ -27,6 +30,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { UserComponent } from './components/user/user.component';
+import { ReportPurchasingComponent } from './components/report-purchasing/report-purchasing.component';
 
 export const routes: Routes = [
   {
@@ -151,6 +155,20 @@ export const routes: Routes = [
         }
       },
       {
+        path: 'inventory-transaction-form',
+        component: InventoryTransactionFormComponent,
+        data: {
+          title: 'Inventory Transaction Form'
+        }
+      },
+      {
+        path: 'stock-request',
+        component: StockRequestComponent,
+        data: {
+          title: 'Stock Request'
+        }
+      },
+      {
         path: 'zone',
         component: ZoneComponent,
         data: {
@@ -190,6 +208,20 @@ export const routes: Routes = [
         component: UserFormComponent,
         data: {
           title: 'User Form'
+        }
+      },
+      {
+        path: 'report-sale',
+        component: ReportSaleComponent,
+        data: {
+          title: 'Sale Report'
+        }
+      },
+      {
+        path: 'report-purchasing',
+        component: ReportPurchasingComponent,
+        data: {
+          title: 'Purchasing Report'
         }
       }
       // {
