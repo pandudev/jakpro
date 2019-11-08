@@ -16,87 +16,15 @@
           </div>
           <hr />
           <div class="row">
-            <div class="col-md-4 p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/ayam-bakar.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Ayam Bakar</h5>
+            <div *ngFor="let item of data" class="col-md-4 p-2 text-center">
+              <img src="{{ item.imagePath }}" alt="" class="img-menu mb-2" />
+              <h5>{{ item.name }}</h5>
               <p>
-                Rp. 15.000
+                {{ item.price }}
               </p>
-              <a href="#" class="btn btn-success btn-block"
-                ><i class="fa fa-plus mr-2"></i>Order</a
-              >
-            </div>
-            <div class="col-md-4  p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/nasi-goreng-kencur-kemangi.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Nasi Goreng</h5>
-              <p>
-                Rp. 12.000
-              </p>
-              <a href="#" class="btn btn-success btn-block"
-                ><i class="fa fa-plus mr-2"></i>Order</a
-              >
-            </div>
-            <div class="col-md-4  p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/sate-aya.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Sate Ayam</h5>
-              <p>
-                Rp. 18.000
-              </p>
-              <a href="#" class="btn btn-success btn-block"
-                ><i class="fa fa-plus mr-2"></i>Order</a
-              >
-            </div>
-            <div class="col-md-4  p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/ketoprak.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Ketoprak</h5>
-              <p>
-                Rp. 12.000
-              </p>
-              <a href="#" class="btn btn-success btn-block"
-                ><i class="fa fa-plus mr-2"></i>Order</a
-              >
-            </div>
-            <div class="col-md-4  p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/es-teh-manis-2-640x447.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Es Teh Manis</h5>
-              <p>
-                Rp. 5.000
-              </p>
-              <a href="#" class="btn btn-success btn-block"
-                ><i class="fa fa-plus mr-2"></i>Order</a
-              >
-            </div>
-            <div class="col-md-4  p-2 text-center">
-              <img
-                src="./../../../assets/img/menu/pecel-lele.jpg"
-                alt=""
-                class="img-menu mb-2"
-              />
-              <h5>Pecel Lele</h5>
-              <p>
-                Rp. 15.000
-              </p>
-              <a href="#" class="btn btn-success btn-block"
+              <a
+                (click)="order(item.id)"
+                class="btn btn-success btn-block text-white"
                 ><i class="fa fa-plus mr-2"></i>Order</a
               >
             </div>
@@ -112,10 +40,20 @@
             <label class="col-md-3 col-form-label">Table</label>
             <label class="col-md-5 col-form-label">
               <h5>Zona 1 Table 2</h5>
+              <zxing-scanner
+                *ngIf="scanEnable"
+                [enable]="scanEnable"
+                (scanSuccess)="scanSuccessHandler($event)"
+                (scanError)="scanErrorHandler($event)"
+                (scanFailure)="scanFailureHandler($event)"
+                (scanComplete)="scanCompleteHandler($event)"
+              ></zxing-scanner>
             </label>
 
             <div class="col-md-4">
-              <a href="#" class="btn btn-success btn-sm float-right"
+              <a
+                (click)="startScan()"
+                class="btn btn-success btn-sm float-right"
                 ><i class="fa fa-qrcode"></i
               ></a>
             </div>

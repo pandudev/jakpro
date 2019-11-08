@@ -1,3 +1,4 @@
+import { products } from './../../data/product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-
-  constructor() { }
+  data = [];
+  constructor() {}
 
   ngOnInit() {
+    this.data = products.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    );
   }
-
 }
