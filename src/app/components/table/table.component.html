@@ -17,64 +17,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table 1</td>
-            <td>Zone 1</td>
-            <td>4</td>
+          <tr *ngFor="let item of data">
+            <td>{{ item.name }}</td>
+            <td>{{ item.zone }}</td>
+            <td>{{ item.capacity }}</td>
             <td>
-              <a href="#" class="btn btn-danger mr-2"
-                ><i class="fa fa-trash"></i
-              ></a>
-              <a routerLink="/table-form" class="btn btn-primary mr-2"
-                ><i class="fa fa-pencil"></i
-              ></a>
-            </td>
-          </tr>
-          <tr>
-            <td>Table 2</td>
-            <td>Zone 1</td>
-            <td>4</td>
-            <td>
-              <a href="#" class="btn btn-danger mr-2"
-                ><i class="fa fa-trash"></i
-              ></a>
-              <a routerLink="/table-form" class="btn btn-primary mr-2"
-                ><i class="fa fa-pencil"></i
-              ></a>
-            </td>
-          </tr>
-          <tr>
-            <td>Table 3</td>
-            <td>Zone 1</td>
-            <td>4</td>
-            <td>
-              <a href="#" class="btn btn-danger mr-2"
-                ><i class="fa fa-trash"></i
-              ></a>
-              <a routerLink="/table-form" class="btn btn-primary mr-2"
-                ><i class="fa fa-pencil"></i
-              ></a>
-            </td>
-          </tr>
-          <tr>
-            <td>Table 1</td>
-            <td>Zone 2</td>
-            <td>4</td>
-            <td>
-              <a href="#" class="btn btn-danger mr-2"
-                ><i class="fa fa-trash"></i
-              ></a>
-              <a routerLink="/table-form" class="btn btn-primary mr-2"
-                ><i class="fa fa-pencil"></i
-              ></a>
-            </td>
-          </tr>
-          <tr>
-            <td>Table 2</td>
-            <td>Zone 2</td>
-            <td>4</td>
-            <td>
-              <a href="#" class="btn btn-danger mr-2"
+              <a (click)="delete()" class="text-white btn btn-danger mr-2"
                 ><i class="fa fa-trash"></i
               ></a>
               <a routerLink="/table-form" class="btn btn-primary mr-2"

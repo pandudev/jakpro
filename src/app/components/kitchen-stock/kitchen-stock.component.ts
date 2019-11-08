@@ -1,3 +1,4 @@
+import { goods } from './../../data/goods';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen-stock.component.scss']
 })
 export class KitchenStockComponent implements OnInit {
+  data: any[] = [];
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data = goods.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    );
+  }
 }

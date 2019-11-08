@@ -14,52 +14,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2012/01/01</td>
-            <td>Bawang Merah</td>
-            <td>1.000 gr</td>
+          <tr *ngFor="let item of data">
+            <td>{{ item.date | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity | number }} {{ item.unit }}</td>
             <td>
-              <a href="#" class="btn btn-primary mr-2"
-                ><i class="fa fa-check mr-2"></i>Accept</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>2012/01/01</td>
-            <td>Bawang Putih</td>
-            <td>1.000 gr</td>
-            <td>
-              <a href="#" class="btn btn-primary mr-2"
-                ><i class="fa fa-check mr-2"></i>Accept</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>2012/01/01</td>
-            <td>Cabe Merah</td>
-            <td>1.000 gr</td>
-            <td>
-              <a href="#" class="btn btn-primary mr-2"
-                ><i class="fa fa-check mr-2"></i>Accept</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>2012/01/01</td>
-            <td>Gula Pasir</td>
-            <td>1.000 gr</td>
-            <td>
-              <a href="#" class="btn btn-primary mr-2"
-                ><i class="fa fa-check mr-2"></i>Accept</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>2012/01/01</td>
-            <td>Garam Dapur</td>
-            <td>1.000 gr</td>
-            <td>
-              <a href="#" class="btn btn-primary mr-2"
+              <a (click)="accept()" class="text-white btn btn-primary mr-2"
                 ><i class="fa fa-check mr-2"></i>Accept</a
               >
             </td>

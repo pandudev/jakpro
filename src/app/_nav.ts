@@ -89,12 +89,12 @@ export const navItems: INavData[] = [
   {
     name: 'Sale Report',
     url: '/report-sale',
-    icon: 'icon-people'
+    icon: 'icon-notebook'
   },
   {
     name: 'Purchasing Report',
     url: '/report-purchasing',
-    icon: 'icon-people'
+    icon: 'icon-notebook'
   }
 ];
 

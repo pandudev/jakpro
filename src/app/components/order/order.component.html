@@ -7,24 +7,33 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label">Filter</label>
             <div class="col-md-9">
-              <select name="filter" id="filter" class="form-control">
-                <option value="1">Semua Menu</option>
-                <option value="1">Makanan</option>
-                <option value="1">Minuman</option>
+              <select
+                (change)="filter($event.target.value)"
+                name="filter"
+                id="filter"
+                class="form-control"
+              >
+                <option value="all">Semua Jenis</option>
+                <option *ngFor="let item of option" value="{{ item }}">{{
+                  item
+                }}</option>
               </select>
             </div>
           </div>
           <hr />
           <div class="row">
-            <div *ngFor="let item of data" class="col-md-4 p-2 text-center">
+            <div
+              *ngFor="let item of data"
+              class="col-md-4 p-2 text-center d-flex flex-column"
+            >
               <img src="{{ item.imagePath }}" alt="" class="img-menu mb-2" />
               <h5>{{ item.name }}</h5>
               <p>
                 {{ item.price }}
               </p>
               <a
-                (click)="order(item.id)"
-                class="btn btn-success btn-block text-white"
+                (click)="order(item)"
+                class="mt-auto btn btn-success btn-block text-white"
                 ><i class="fa fa-plus mr-2"></i>Order</a
               >
             </div>
@@ -39,55 +48,54 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label">Table</label>
             <label class="col-md-5 col-form-label">
-              <h5>Zona 1 Table 2</h5>
-              <zxing-scanner
-                *ngIf="scanEnable"
-                [enable]="scanEnable"
-                (scanSuccess)="scanSuccessHandler($event)"
-                (scanError)="scanErrorHandler($event)"
-                (scanFailure)="scanFailureHandler($event)"
-                (scanComplete)="scanCompleteHandler($event)"
-              ></zxing-scanner>
+              <h5>{{ tableId }}</h5>
             </label>
 
             <div class="col-md-4">
               <a
-                (click)="startScan()"
+                onclick="document.getElementById('scan').click()"
                 class="btn btn-success text-white  btn-block float-right"
                 ><i class="fa fa-qrcode mr-2"></i>Scan Table</a
               >
+              <input id="scan" type="file" hidden />
             </div>
           </div>
 
-          <hr />
-          <div class="row mb-2">
+          <hr *ngIf="orderedData.length > 0" />
+          <div *ngFor="let item of orderedData" class="row mb-2">
             <div class="col-md-3">
               <img
-                src="./../../../assets/img/menu/nasi-goreng-kencur-kemangi.jpg"
-                alt="Nasi Goreng Kemangi"
+                src="{{ item.imagePath }}"
+                alt="{{ item.name }}"
                 class="img-menu-list"
               />
             </div>
             <div class="col-md-9">
               <div class="form-group row mb-0">
                 <div class="col-md-6 form-label d-flex align-items-center">
-                  <p class="m-0">Nasi Goreng</p>
+                  <p class="m-0">{{ item.name }}</p>
                 </div>
                 <div
                   class="col-md-6 d-flex justify-content-between align-items-center"
                 >
-                  <p class="m-0 mr-auto">3</p>
-                  <a href="#" class="btn btn-sm btn-danger mr-1">
+                  <p class="m-0 mr-auto">{{ item.quantity }} Porsi</p>
+                  <a
+                    (click)="sub(item)"
+                    class="text-white btn btn-sm btn-danger mr-1"
+                  >
                     <i class="fa fa-minus"></i>
                   </a>
-                  <a href="#" class="btn btn-sm btn-success">
+                  <a
+                    (click)="order(item)"
+                    class=" text-white btn btn-sm btn-success"
+                  >
                     <i class="fa fa-plus"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mb-2">
+          <!-- <div class="row mb-2">
             <div class="col-md-3">
               <img
                 src="./../../../assets/img/menu/sate-aya.jpg"
@@ -140,14 +148,18 @@
                 </div>
               </div>
             </div>
-          </div>
-          <hr />
-          <div class="row">
+          </div> -->
+          <hr *ngIf="orderedData.length > 0" />
+          <div *ngIf="orderedData.length > 0" class="row">
             <div class="col-md-12">
-              <a href="#" class="btn btn-primary float-right"
+              <a
+                (click)="submit()"
+                class="text-white btn btn-primary float-right"
                 ><i class="fa fa-send mr-2"></i>Checkout</a
               >
-              <a href="#" class="btn btn-danger float-right mr-2"
+              <a
+                (click)="cancel()"
+                class="text-white btn btn-danger float-right mr-2"
                 ><i class="fa fa-ban mr-2"></i>Cancel</a
               >
             </div>

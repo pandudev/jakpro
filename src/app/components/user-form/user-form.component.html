@@ -54,10 +54,14 @@
         </div>
 
         <div>
-          <button class="btn btn-primary ml-2 float-right" type="submit">
+          <a
+            (click)="submit()"
+            class="text-white btn btn-primary ml-2 float-right"
+            type="submit"
+          >
             <i class="fa fa-send mr-2"></i> Submit
-          </button>
-          <a routerLink="/user" class="btn btn-danger float-right">
+          </a>
+          <a (click)="cancel()" class="text-white btn btn-danger float-right">
             <i class="fa fa-ban mr-2"></i>Cancel
           </a>
         </div>

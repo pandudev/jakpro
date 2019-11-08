@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-form',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
+  constructor(private router: Router, private toastr: ToastrService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  submit() {
+    if (confirm('Are you sure?')) {
+      this.toastr.success('User Saved');
+      this.router.navigateByUrl('/user');
+    }
   }
 
+  cancel() {
+    if (confirm('Are you sure?')) {
+      this.router.navigateByUrl('/user');
+    }
+  }
 }

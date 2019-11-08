@@ -11,40 +11,15 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Last Stock Entry</th>
+            <th>Type</th>
             <th>Quantity</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Bawang Putih</td>
-            <td>2012/01/01</td>
-            <td>100 gram</td>
-          </tr>
-          <tr>
-            <td>Bawang Merah</td>
-            <td>2012/01/01</td>
-            <td>20 gram</td>
-          </tr>
-          <tr>
-            <td>Cabe Merah</td>
-            <td>2012/01/01</td>
-            <td>200 gram</td>
-          </tr>
-          <tr>
-            <td>Garam Dapur</td>
-            <td>2012/01/01</td>
-            <td>100 gram</td>
-          </tr>
-          <tr>
-            <td>Kunyit</td>
-            <td>2012/01/01</td>
-            <td>100 gram</td>
-          </tr>
-          <tr>
-            <td>Gula Pasir</td>
-            <td>2012/01/01</td>
-            <td>100 gram</td>
+          <tr *ngFor="let item of data">
+            <td>{{ item.name }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.stock | number }} {{ item.unit }}</td>
           </tr>
         </tbody>
       </table>
