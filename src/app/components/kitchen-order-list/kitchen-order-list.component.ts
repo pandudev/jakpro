@@ -33,8 +33,8 @@ export class KitchenOrderListComponent implements OnInit {
         const done = productz.every((z) => z.status.includes('Served'));
         console.log(done);
         if (done) {
-          this.data = order.filter((z) => z.id !== z.id);
-          this.toastr.success('Order completed on ' + x.tableId);
+          this.data = order.filter((z) => z.id !== x.id);
+          this.toastr.success('Order completed on ' + x.zone + ' ' + x.table);
         }
       });
     }
