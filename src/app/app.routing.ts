@@ -1,3 +1,5 @@
+import { ReportStockComponent } from './components/report-stock/report-stock.component';
+
 import { ReportSaleComponent } from './components/report-sale/report-sale.component';
 import { StockRequestComponent } from './components/stock-request/stock-request.component';
 import { InventoryTransactionFormComponent } from './components/inventory-transaction-form/inventory-transaction-form.component';
@@ -222,6 +224,13 @@ export const routes: Routes = [
         component: ReportPurchasingComponent,
         data: {
           title: 'Purchasing Report'
+        }
+      },
+      {
+        path: 'report-stock',
+        component: ReportStockComponent,
+        data: {
+          title: 'Stock Report'
         }
       }
       // {

@@ -95,6 +95,11 @@ export const navItems: INavData[] = [
     name: 'Purchasing Report',
     url: '/report-purchasing',
     icon: 'icon-notebook'
+  },
+  {
+    name: 'Stock Report',
+    url: '/report-stock',
+    icon: 'icon-notebook'
   }
 ];
 

@@ -34,7 +34,7 @@ export class OrderListComponent implements OnInit {
         const productz = x.products;
         const done = productz.every((z) => z.status.includes('Served'));
         if (done) {
-          this.toastr.success('Order completed on ' + x.tableId);
+          this.toastr.success('Order completed on ' + x.zone + ' ' + x.table);
           this.data = order.filter((d) => d.id !== d.id);
         }
       });

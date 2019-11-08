@@ -61,6 +61,7 @@ import { InventoryTransactionFormComponent } from './components/inventory-transa
 import { StockRequestComponent } from './components/stock-request/stock-request.component';
 import { ReportPurchasingComponent } from './components/report-purchasing/report-purchasing.component';
 import { ReportSaleComponent } from './components/report-sale/report-sale.component';
+import { ReportStockComponent } from './components/report-stock/report-stock.component';
 
 @NgModule({
   imports: [
@@ -106,7 +107,8 @@ import { ReportSaleComponent } from './components/report-sale/report-sale.compon
     InventoryTransactionFormComponent,
     StockRequestComponent,
     ReportPurchasingComponent,
-    ReportSaleComponent
+    ReportSaleComponent,
+    ReportStockComponent
   ],
   providers: [
     {
