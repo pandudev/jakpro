@@ -1,6 +1,7 @@
 import { products } from './../../data/product';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-order',
@@ -15,7 +16,7 @@ export class OrderComponent implements OnInit {
   @ViewChild('scanner', { static: false })
   scanner: ZXingScannerComponent;
 
-  constructor() {}
+  constructor(private toastr: ToastrService) {}
 
   ngOnInit() {
     this.data = products.sort((a, b) =>
@@ -32,19 +33,19 @@ export class OrderComponent implements OnInit {
   }
 
   scanSuccessHandler(event) {
-    console.log(event);
+    this.toastr.info(event);
     this.scanEnable = false;
   }
   scanErrorHandler(event) {
-    console.log(event);
+    this.toastr.info(event);
     this.scanEnable = false;
   }
   scanFailureHandler(event) {
-    console.log(event);
+    this.toastr.info(event);
     this.scanEnable = false;
   }
   scanCompleteHandler(event) {
-    console.log(event);
+    this.toastr.info(event);
     this.scanEnable = false;
   }
 }
